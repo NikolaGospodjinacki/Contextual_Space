@@ -297,6 +297,21 @@ terraform apply -var-file=terraform.tfvars
 terraform destroy -var-file=terraform.tfvars
 ```
 
+### Destroying Infrastructure via GitHub Actions
+
+You can also destroy all infrastructure using the **Destroy Infrastructure** workflow:
+
+1. Go to **Actions** → **Destroy Infrastructure**
+2. Click **Run workflow**
+3. Type `DESTROY` in the confirmation field
+4. Check the options for emptying S3 and ECR
+5. Click **Run workflow**
+
+This workflow will:
+- Empty the S3 bucket (including versioned objects)
+- Delete all ECR images
+- Run `terraform destroy` to remove all resources
+
 ---
 
 ## Cost Estimation

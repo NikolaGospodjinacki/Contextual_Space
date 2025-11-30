@@ -266,6 +266,24 @@ terraform plan -var-file=terraform.tfvars
 terraform apply -var-file=terraform.tfvars
 ```
 
+### Destroy Infrastructure
+
+To tear down all AWS resources and reduce costs to $0:
+
+**Via GitHub Actions (Recommended):**
+1. Go to **Actions** → **Destroy Infrastructure**
+2. Click **Run workflow**
+3. Type `DESTROY` to confirm
+4. Wait for completion (~2-3 minutes)
+
+**Via Terminal:**
+```bash
+cd infrastructure/terraform
+terraform destroy -var-file=terraform.tfvars
+```
+
+> ⚠️ This will delete all data. Infrastructure can be recreated with `terraform apply`.
+
 ---
 
 ## 💰 Cost Breakdown
